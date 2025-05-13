@@ -135,7 +135,7 @@ function App() {
           <div className="relative w-48 h-48 mx-auto mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse opacity-75"></div>
             <img
-              src="/profile-placeholder.jpg"
+              src="/portfolio/profile-placeholder.jpg"
               alt="Priti Jha"
               className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800"
               onError={(e) => {
