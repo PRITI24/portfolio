@@ -27,18 +27,48 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          echo "Installing dependencies..."
+          npm ci
+          npm list vite || npm install vite --save-dev
+        
+      - name: Verify package.json
+        run: |
+          echo "Package.json contents:"
+          cat package.json
+          echo "Node version:"
+          node --version
+          echo "NPM version:"
+          npm --version
 
       - name: Build
-        run: npm run build
+        run: |
+          echo "Starting build process..."
+          npm run build
+        env:
+          CI: true
 
-      - name: List dist directory
-        run: ls -la dist
-
-      - name: Package dist directory
-        run: tar -czf artifact.tar.gz dist
+      - name: Verify build output
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Checking dist directory:"
+          if [ ! -d "dist" ]; then
+            echo "Error: dist directory not found!"
+            exit 1
+          fi
+          echo "dist directory contents:"
+          ls -la dist
+          echo "Checking for index.html:"
+          if [ ! -f "dist/index.html" ]; then
+            echo "Error: dist/index.html not found!"
+            exit 1
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
@@ -46,7 +76,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: artifact.tar.gz
+          path: dist
+          retention-days: 1
 
   deploy:
     needs: build
@@ -57,4 +88,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 
+        uses: actions/deploy-pages@v3 
