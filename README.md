@@ -2,8 +2,6 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This website showcases my professional experience, skills, and achievements in an interactive and visually appealing manner.
 
-![Portfolio Preview](public/profile-placeholder.jpg)
-
 ## 📌 Table of Contents
 - [Features](#-features)
 - [Built With](#️-built-with)
