@@ -82,6 +82,7 @@ jobs:
         with:
           path: dist
           retention-days: 1
+          name: github-pages
 
   deploy:
     needs: build
