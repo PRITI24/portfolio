@@ -171,7 +171,7 @@ function App() {
             </p>
           </div>
           <a 
-            href="https://drive.google.com/file/d/1A51DaPb8FzzM2BM-CAUFaYwET2OEYoEI/view?usp=sharing"
+            href="https://drive.google.com/file/d/1gvfvKMhKaU7EqH090EcozVc_jmlHnM0p/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-accent transition-all duration-300 hover:scale-105 shadow-lg"
