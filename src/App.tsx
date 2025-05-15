@@ -214,9 +214,11 @@ function App() {
                 </div>
                 <p className="text-secondary">May 2024 - Present</p>
               </div>
-              <p className="text-secondary">
-                Working in Edge team for ENP Migration leveraging technologies like C++.
-              </p>
+              <ul className="list-disc list-inside text-secondary space-y-2">
+                <li>Led development and experimentation of secure data handling features, benefiting 170K+ users, and enhancing cross-browser data migration.</li>
+                <li>Resolving critical bugs and adding tests that contributes to improved system efficiency.</li>
+                <li>Initiated and led community engagement programs by conducting technical learning sessions, fostering a culture of continuous learning.</li>
+              </ul>
             </div>
 
             <div className="card card-hover">
